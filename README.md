@@ -14,6 +14,8 @@ A futuristic, local-first AI assistant that runs with **zero third-party package
 
 4. Open **http://127.0.0.1:3000** in Chrome or Edge.
 
+**Windows shortcut:** after installing Node.js, you can simply double-click `start-jarvis.bat` to open the server and browser.
+
 **No `npm install` required.** All functions apart from live AI replies work in clearly labeled demo mode. Chat, memory, notes and tasks are saved in your browser's local storage (not synchronized across devices).
 
 ## Enable the live AI model (optional)
@@ -77,6 +79,7 @@ jarvis/
 │   └── server.test.mjs
 ├── .env.example
 ├── .gitignore
+├── start-jarvis.bat     # Windows one-click launcher
 └── package.json
 ```
 
