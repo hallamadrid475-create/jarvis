@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d19">
+  <meta name="description" content="JARVIS — your local-first AI command center.">
+  <title>JARVIS · Intelligence System</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div><div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <a class="brand" href="#dashboard" data-view="dashboard" aria-label="JARVIS home">
+          <div class="brand-mark"><span>J</span><div class="brand-ring"></div></div>
+          <div class="brand-copy"><strong>JARVIS<span class="brand-dot">.</span></strong><small>PERSONAL INTELLIGENCE</small></div>
+        </a>
+        <button class="sidebar-mobile-close icon-button" id="close-sidebar" aria-label="Close navigation">✕</button>
+      </div>
+      <div class="sidebar-section-label">WORKSPACE <span>01</span></div>
+      <nav class="nav" aria-label="Main navigation">
+        <button class="nav-link active" data-view="dashboard"><span class="nav-glyph">◈</span><span>Dashboard</span><span class="nav-active-dot"></span></button>
+        <button class="nav-link" data-view="chat"><span class="nav-glyph">▤</span><span>AI Conversation</span><span class="nav-shortcut">⌘ 1</span></button>
+        <button class="nav-link" data-view="conversations"><span class="nav-glyph">◷</span><span>History</span><span class="nav-count" id="history-count">0</span></button>
+      </nav>
+      <div class="sidebar-section-label spaced">ORGANIZATION <span>02</span></div>
+      <nav class="nav" aria-label="Organization">
+        <button class="nav-link" data-view="notes"><span class="nav-glyph">▧</span><span>Notes</span><span class="nav-count" id="notes-count">0</span></button>
+        <button class="nav-link" data-view="tasks"><span class="nav-glyph">✓</span><span>Tasks</span><span class="nav-count" id="tasks-count">0</span></button>
+        <button class="nav-link" data-view="memory"><span class="nav-glyph">◎</span><span>AI Memory</span><span class="nav-count" id="memory-count">0</span></button>
+      </nav>
+      <div class="sidebar-stretch"></div>
+      <div class="sidebar-bottom">
+        <div class="sidebar-divider"></div>
+        <button class="nav-link" data-view="settings"><span class="nav-glyph">⚙</span><span>Settings</span></button>
+        <div class="profile-chip"><div class="avatar">U</div><div><strong>My workspace</strong><small>Local & private by default</small></div><span class="online-pulse"></span></div>
+      </div>
+    </aside>
+    <div class="main-wrap">
+      <header class="topbar">
+        <div class="topbar-left"><button class="icon-button mobile-menu" id="open-sidebar" aria-label="Open menu">☰</button><span class="breadcrumb-muted">WORKSPACE</span><span class="breadcrumb-slash">/</span><span id="page-title">Command center</span></div>
+        <div class="topbar-right"><div class="date-chip" id="top-date"></div><span class="top-divider"></span><div class="status-chip" id="header-status"><span class="live-dot"></span><span id="header-mode">SYSTEM READY</span></div><button class="icon-button sound-button" id="toggle-speech" title="Toggle spoken replies" aria-label="Toggle spoken replies">♫</button></div>
+      </header>
+      <main id="main-content">
+        <section id="view-dashboard" class="view active" aria-labelledby="dashboard-title">
+          <div class="page-eyebrow"><span class="eyebrow-line"></span> YOUR INTELLIGENCE HUB <span class="eyebrow-index">SYS / 001</span></div>
+          <div class="welcome-row"><div><h1 id="dashboard-title">Good evening<span class="accent">.</span></h1><p>Your personal command center is online. What shall we do today?</p></div><button class="outline-button" id="dashboard-new-chat">＋ &nbsp; New conversation</button></div>
+          <div class="dashboard-grid">
+            <div class="core-card panel">
+              <div class="panel-heading"><span><i class="microdot"></i> JARVIS CORE</span><span class="subtle-id">INTELLIGENCE ENGINE · v1.0</span></div>
+              <div class="core-stage" aria-label="Animated JARVIS interface">
+                <div class="orb-field" aria-hidden="true"><div class="orb-orbit orbit-a"></div><div class="orb-orbit orbit-b"></div><div class="orb-outer-ring"></div><div class="orb-inner-ring"></div><div class="orb-glow"></div><div class="orb-center"><span>J</span></div><div class="orb-tick tick-a"></div><div class="orb-tick tick-b"></div></div>
+                <div class="core-coordinate coord-top">48° / INTELLIGENCE</div><div class="core-coordinate coord-bottom">SYSTEM STABLE /// v.01</div>
+              </div>
+              <div class="core-bottom"><div><span class="core-live" id="core-mode">● DEMO MODE</span><h2>How can I assist?</h2><p>Talk to JARVIS, organize your world, and get things done.</p></div><div class="core-actions"><button class="primary-button" id="core-chat">Open AI Chat <span>↗</span></button><button class="circle-button" id="core-mic" aria-label="Start voice input" title="Voice input">♬</button></div></div>
+            </div>
+            <div class="system-col">
+              <div class="panel system-card"><div class="panel-heading"><span>SYSTEM OVERVIEW</span><span class="subtle-id">LIVE DIAGNOSTICS</span></div>
+                <div class="system-metric"><div class="metric-icon cyan">◇</div><div class="metric-copy"><strong>AI Connection</strong><small id="metric-model">Checking connection...</small></div><span class="metric-status" id="metric-ai">CHECKING</span></div>
+                <div class="system-metric"><div class="metric-icon violet">◌</div><div class="metric-copy"><strong>Voice interface</strong><small id="metric-voice">Detecting browser support...</small></div><span class="metric-status">READY</span></div>
+                <div class="system-metric"><div class="metric-icon lime">▤</div><div class="metric-copy"><strong>Local storage</strong><small>Conversations saved in browser</small></div><span class="metric-status">ACTIVE</span></div>
+              </div>
+              <div class="panel shortcut-card"><div class="panel-heading"><span>QUICK ACCESS</span><span class="subtle-id">NAVIGATION</span></div><button data-view="tasks" class="shortcut"><span>✓</span><div><strong>Manage your tasks</strong><small>Keep your mission on track</small></div><b>↗</b></button><button data-view="notes" class="shortcut"><span>▧</span><div><strong>Capture an idea</strong><small>Write it before it's gone</small></div><b>↗</b></button><button data-view="memory" class="shortcut"><span>◎</span><div><strong>Personal memory</strong><small>Teach JARVIS about you</small></div><b>↗</b></button></div>
+            </div>
+          </div>
+          <div class="summary-row"><div class="mini-panel"><span>CONVERSATIONS</span><strong id="summary-convs">00</strong><small>Total sessions</small><i>↗</i></div><div class="mini-panel"><span>ACTIVE TASKS</span><strong id="summary-tasks">00</strong><small>Waiting on you</small><i>↗</i></div><div class="mini-panel"><span>YOUR NOTES</span><strong id="summary-notes">00</strong><small>Ideas captured</small><i>↗</i></div><div class="mini-panel"><span>MEMORY ITEMS</span><strong id="summary-memories">00</strong><small>Saved facts</small><i>↗</i></div></div>
+        </section>
+        <section id="view-chat" class="view" aria-labelledby="chat-title"><div class="section-head"><div><div class="page-eyebrow"><span class="eyebrow-line"></span> REAL-TIME COMMUNICATION</div><h1 id="chat-title">AI Conversation<span class="accent">.</span></h1><p>Speak naturally. Think bigger. Build faster.</p></div><button class="outline-button" id="new-chat">＋ &nbsp; New chat</button></div>
+          <div class="chat-layout"><div class="chat-main panel"><div class="chat-toolbar"><div class="chat-agent"><div class="chat-avatar">J</div><div><strong>JARVIS <span class="status-dot-small"></span></strong><small id="chat-mode-label">Personal AI assistant · demo mode</small></div></div><button class="small-button" id="clear-chat" title="Clear current chat">Clear chat</button></div><div class="messages" id="messages" role="log" aria-live="polite"></div><div class="chat-bottom"><div class="suggestions" id="suggestions"><button data-prompt="Help me plan my day">Plan my day ↗</button><button data-prompt="Give me ideas for a new project">Project ideas ↗</button><button data-prompt="How can I organize my tasks?">Organize tasks ↗</button></div><form class="composer" id="chat-form"><button type="button" class="composer-mic" id="chat-mic" aria-label="Dictate message">♬</button><textarea id="chat-input" rows="1" placeholder="Ask JARVIS anything..." aria-label="Message JARVIS" maxlength="4000"></textarea><button type="submit" id="send-button" class="send-button" aria-label="Send message">➤</button></form><p class="composer-foot">ENTER TO SEND · SHIFT+ENTER FOR NEW LINE <span id="typing-status">SYSTEM READY</span></p></div></div>
+            <div class="chat-sidebar panel"><div class="panel-heading"><span>YOUR SESSIONS</span><button class="icon-button add-mini" id="chat-side-new" title="New chat">＋</button></div><div id="chat-session-list"></div><div class="chat-tip"><span class="accent">✦</span><strong>Pro tip</strong><p>Try saying “remember I prefer short answers” or “create task finish my website”.</p></div></div></div>
+        </section>
+        <section id="view-conversations" class="view" aria-labelledby="conversations-title"><div class="section-head"><div><div class="page-eyebrow"><span class="eyebrow-line"></span> YOUR PAST MISSIONS</div><h1 id="conversations-title">Conversation history<span class="accent">.</span></h1><p>Continue where you left off. Stored on this browser.</p></div><button class="outline-button" id="history-new">＋ &nbsp; Start conversation</button></div><div class="cards-grid" id="history-list"></div></section>
+        <section id="view-notes" class="view" aria-labelledby="notes-title"><div class="section-head"><div><div class="page-eyebrow"><span class="eyebrow-line"></span> IDEA ARCHIVE</div><h1 id="notes-title">Your notes<span class="accent">.</span></h1><p>Capture ideas, thoughts, and discoveries.</p></div></div><form id="note-form" class="entry-form panel"><label for="note-title">NEW NOTE</label><input id="note-title" type="text" placeholder="Give your note a title..." maxlength="80" required><textarea id="note-body" rows="4" placeholder="What's on your mind?" maxlength="5000" required></textarea><button class="primary-button" type="submit">Save note <span>↗</span></button></form><div class="cards-grid" id="notes-list"></div></section>
+        <section id="view-tasks" class="view" aria-labelledby="tasks-title"><div class="section-head"><div><div class="page-eyebrow"><span class="eyebrow-line"></span> MISSION CONTROL</div><h1 id="tasks-title">Your tasks<span class="accent">.</span></h1><p>Progress happens one completed task at a time.</p></div></div><form id="task-form" class="task-entry panel"><input id="task-input" type="text" placeholder="Add a new task..." maxlength="220" required aria-label="Task title"><button class="primary-button" type="submit">＋ Add task</button></form><div class="task-progress panel"><div><strong id="task-progress-label">0 / 0 completed</strong><span>MISSION PROGRESS</span></div><div class="progress-track"><div id="task-progress-bar"></div></div></div><div id="tasks-list" class="tasks-list"></div></section>
+        <section id="view-memory" class="view" aria-labelledby="memory-title"><div class="section-head"><div><div class="page-eyebrow"><span class="eyebrow-line"></span> CONTEXT ENGINE</div><h1 id="memory-title">AI memory<span class="accent">.</span></h1><p>Save information JARVIS should keep in mind when you chat.</p></div></div><div class="memory-info panel"><span class="memory-info-icon">◎</span><div><strong>Memory you control</strong><p>Saved locally in your browser. With AI enabled, these facts are sent to your configured AI provider as context for each chat request. Delete them anytime.</p></div></div><form id="memory-form" class="task-entry panel"><input id="memory-input" type="text" placeholder="e.g. I prefer responses in Moroccan Darija" maxlength="250" required aria-label="Memory to remember"><button class="primary-button" type="submit">＋ Remember</button></form><div class="cards-grid" id="memory-list"></div></section>
+        <section id="view-settings" class="view" aria-labelledby="settings-title"><div class="section-head"><div><div class="page-eyebrow"><span class="eyebrow-line"></span> SYSTEM PREFERENCES</div><h1 id="settings-title">Settings<span class="accent">.</span></h1><p>Make JARVIS work the way you want.</p></div></div><div class="settings-grid"><div class="panel settings-panel"><div class="panel-heading"><span>AI CONNECTION</span><span class="subtle-id" id="settings-mode">DEMO</span></div><div class="settings-setting"><div><strong>Current mode</strong><p id="settings-ai-description">Offline demo; no model is connected.</p></div><span class="setting-pill" id="settings-ai-pill">DEMO</span></div><div class="setting-help">To enable real AI: copy <code>.env.example</code> to <code>.env</code>, set <code>AI_API_KEY</code> and <code>AI_MODEL</code> on the server, then restart it. Keep your key private.</div></div><div class="panel settings-panel"><div class="panel-heading"><span>VOICE & AUDIO</span><span class="subtle-id">BROWSER</span></div><label class="settings-setting"><div><strong>Read assistant responses aloud</strong><p>Use your device's speech synthesizer.</p></div><input type="checkbox" id="auto-speak" class="toggle"></label><label class="settings-setting"><div><strong>Send dictated messages automatically</strong><p>When microphone recognition finishes.</p></div><input type="checkbox" id="auto-send" class="toggle"></label><div class="setting-help">Speech recognition depends on your browser and microphone permissions; in some browsers it uses online processing.</div></div><div class="panel settings-panel"><div class="panel-heading"><span>DATA CONTROL</span><span class="subtle-id">LOCAL ONLY</span></div><p class="settings-copy">Conversations, notes, tasks and memory are stored in this browser. They aren't synced and can be lost if browser storage is cleared.</p><button class="danger-button" id="reset-data">Delete all local JARVIS data</button></div></div></section>
+      </main>
+      <footer class="app-footer"><span><span class="footer-dot"></span> JARVIS INTELLIGENCE SYSTEM</span><span>DESIGNED FOR CLARITY. BUILT FOR ACTION.</span><span>LOCAL WORKSPACE · v1.0</span></footer>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
